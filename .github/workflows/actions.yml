@@ -1,6 +1,6 @@
 on: [pull_request, push]
 
-name: test
+name: CI
 
 jobs:
   test:
@@ -12,15 +12,13 @@ jobs:
       uses: comigor/actions/dart-test@master
   deploy:
     needs: test
-    runs-on: ubuntu-latest
-    steps:
+    runs-on: ubuntu-latest    
+    if: contains(github.ref, 'master')
+    steps:    
     - name: Clone repository
-      uses: actions/checkout@master
-      branches:
-        - master
+      uses: actions/checkout@master          
     - name: Publish to pub.dev
-      uses: comigor/actions/pub-publish@master
+      uses: comigor/actions/pub-publish@master      
       env:
-        PUB_CREDENTIALS: ${{ secrets.PUB_CREDENTIALS }}
-      branches:
-        - master
+        PUB_CREDENTIALS: ${{ secrets.PUB_CREDENTIALS }}    
+      
