@@ -7,7 +7,7 @@ Simple library to convert accents (diacritics) from strings to latin characters.
 
 Add the following line to your `pubspec.yaml` file:
 ```
-latinize: '>=0.2.0 <1.0.0'
+latinize: '>=0.0.1 <1.0.0'
 ```
 
 And then:

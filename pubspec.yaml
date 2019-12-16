@@ -1,8 +1,5 @@
 name: latinize
-version: 0.2.0+test-github-actions-1
-authors:
-- Lucas Mafra <lucas.mafra95@gmail.com>
-- Gabriel Mesquita <gabrieljustware@gmail.com>
+version: 0.0.1
 description:
   Simple library to convert accents (diacritics) from strings to latin characters. 
 homepage: https://github.com/latinize/latinize
