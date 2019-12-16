@@ -14,7 +14,7 @@ void main() {
 
   group('extendSymbolTable', () {
     test('add or override symbol table', () {
-      extendSymbolTable({
+      extendSymbolTable(<String, String>{
         'Ä': 'Ae',
         'Ü': 'Ue',
       });
