@@ -1,0 +1,26 @@
+on: [pull_request, push]
+
+name: test
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Clone repository
+      uses: actions/checkout@master
+    - name: Run tests
+      uses: comigor/actions/dart-test@master
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Clone repository
+      uses: actions/checkout@master
+      branches:
+        - master
+    - name: Publish to pub.dev
+      uses: comigor/actions/pub-publish@master
+      env:
+        PUB_CREDENTIALS: ${{ secrets.PUB_CREDENTIALS }}
+      branches:
+        - master
