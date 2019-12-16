@@ -3,10 +3,21 @@
 
 Simple library to convert accents (diacritics) from strings to latin characters.
 
-## Install
+## Installation
+
+Add the following line to your `pubspec.yaml` file:
+```
+latinize: '>=0.2.0 <1.0.0'
+```
+
+And then:
 
 ```
-pub get latinize
+pub get
+```
+or
+```
+flutter pub get
 ```
 
 ## Usage
