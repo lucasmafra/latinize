@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.1.0
+- Migrate to nullsafety
+
 ## 0.0.2
 - Add GitHub Actions
 
