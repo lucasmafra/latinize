@@ -14,11 +14,13 @@ void main() {
 
   group('extendSymbolTable', () {
     test('add or override symbol table', () {
-      extendSymbolTable(<String, String>{
-        'Ä': 'Ae',
-        'Ü': 'Ue',
-      });
-      expect(latinize('ÄÜ'), 'AeUe');
+      expect(
+        latinize('ÄÜ', <String, String>{
+          'Ä': 'Ae',
+          'Ü': 'Ue',
+        }),
+        'AeUe',
+      );
     });
   });
 }

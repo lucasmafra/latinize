@@ -15,17 +15,17 @@
 
 /// Parses a text and convert accents (diacritics)
 /// from strings to latin characters.
-String latinize(String text) => text
-    .split('')
-    .map((String character) => _symbolTable[character] ?? character)
-    .join();
-
-/// You can use the extendSymbolTable to add or override symbols
-void extendSymbolTable(Map<String, String> symbolTable) {
-  symbolTable.forEach((String key, String value) {
-    _symbolTable[key] = value;
-  });
-}
+String latinize(
+  String text, [
+  Map<String, String> extendedSymbolTable = const <String, String>{},
+]) =>
+    text
+        .split('')
+        .map((String character) =>
+            extendedSymbolTable[character] ??
+            _symbolTable[character] ??
+            character)
+        .join();
 
 Map<String, String> _symbolTable = <String, String>{
   'Á': 'A',
